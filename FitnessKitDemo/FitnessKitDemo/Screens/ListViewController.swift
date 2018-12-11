@@ -35,8 +35,7 @@ class ListViewController: UIViewController {
 		provider.getCachedSchedule { [weak self] (result) in
 			switch result {
 			case .success(let items):
-				let models = items.map { WorkoutViewModel(entity: $0) }
-				self?.adapter.reload(with: models)
+				self?.adapter.reload(with: items)
 			case .failure(let error):
 				self?.showErrorMessage(error?.localizedDescription)
 			}
@@ -51,7 +50,7 @@ class ListViewController: UIViewController {
 			
 			switch result {
 			case .success(let items):
-				print(items)
+				self?.adapter.reload(with: items)
 			case .failure(let error):
 				self?.showErrorMessage(error?.localizedDescription)
 			}

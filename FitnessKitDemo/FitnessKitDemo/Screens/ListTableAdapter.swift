@@ -10,7 +10,17 @@ import UIKit
 
 class ListTableAdapter: NSObject, UITableViewDataSource, UITableViewDelegate {
 	
-	private var items: [WorkoutViewModel] = []
+	private var items: [WorkoutViewModel] = [] {
+		didSet {
+			groupedItems = [:]
+			guard items.count > 0 else { return }
+			
+			for weekDay in WeekDays.monday.rawValue...WeekDays.sunday.rawValue {
+				groupedItems[weekDay] = items.filter { $0.weekDay == weekDay }
+			}
+		}
+	}
+	private var groupedItems: [Int: [WorkoutViewModel]] = [:]
 	private var tableView: UITableView?
 	
 	// MARK: - Public
@@ -33,14 +43,25 @@ class ListTableAdapter: NSObject, UITableViewDataSource, UITableViewDelegate {
 	
 	// MARK: - UITableViewDataSource
 	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return groupedItems.keys.count
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return items.count
+		return groupedItems[section]?.count ?? 0
+	}
+	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		if let weekday = WeekDays(rawValue: section + 1) {
+			return weekday.description
+		}
+		return nil
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: WorkoutListCell.identifier, for: indexPath) as! WorkoutListCell
 		
-		let item = items[indexPath.row]
+		let item = groupedItems[indexPath.section]?[indexPath.row]
 		cell.configure(with: item)
 		
 		return cell

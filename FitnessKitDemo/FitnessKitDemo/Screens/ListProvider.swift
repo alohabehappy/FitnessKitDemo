@@ -15,7 +15,7 @@ protocol ListProviderProtocol {
 }
 
 enum ListProviderResult {
-	case success(items: [WorkoutEntity])
+	case success(items: [WorkoutViewModel])
 	case failure(error: Error?)
 }
 
@@ -25,7 +25,8 @@ class ListProvider: ListProviderProtocol {
 	
 	func getCachedSchedule(completion: @escaping (ListProviderResult) -> Void) {
 		let items = cache.get(WorkoutEntity.self)
-		completion(.success(items: items))
+		let models = items.map { WorkoutViewModel(entity: $0) }
+		completion(.success(items: models))
 	}
 	
 	func getOnlineSchedule(completion: @escaping (ListProviderResult) -> Void) {
@@ -44,7 +45,9 @@ class ListProvider: ListProviderProtocol {
 					completion(.failure(error: error))
 					return
 				}
-				completion(.success(items: items))
+				
+				let models = items.map { WorkoutViewModel(entity: $0) }
+				completion(.success(items: models))
 			case .failure(let error):
 				completion(.failure(error: error))
 			}

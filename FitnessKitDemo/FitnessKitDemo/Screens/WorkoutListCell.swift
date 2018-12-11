@@ -11,11 +11,11 @@ import SnapKit
 
 class WorkoutListCell: UITableViewCell {
 	
-	func configure(with viewModel: WorkoutViewModel) {
-		startTimeLabel.text = viewModel.startTime
-		endTimeLabel.text = viewModel.endTime
-		titleLabel.text = viewModel.title
-		teacherLabel.text = viewModel.teacher
+	func configure(with viewModel: WorkoutViewModel?) {
+		startTimeLabel.text = viewModel?.startTime ?? ""
+		endTimeLabel.text = viewModel?.endTime ?? ""
+		titleLabel.text = viewModel?.title ?? ""
+		teacherLabel.text = viewModel?.teacher ?? ""
 	}
 	
 	// MARK: - UI properties

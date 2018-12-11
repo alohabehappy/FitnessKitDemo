@@ -24,6 +24,7 @@
 		DDE503BB21BFDF8100031735 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503BA21BFDF8100031735 /* WorkoutViewModel.swift */; };
 		DDE503BD21BFE02000031735 /* WorkoutListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503BC21BFE02000031735 /* WorkoutListCell.swift */; };
 		DDE503BF21BFE06900031735 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503BE21BFE06900031735 /* UITableViewCellExtension.swift */; };
+		DDE503C121BFEB6400031735 /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503C021BFEB6400031735 /* WeekDays.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		DDE503BA21BFDF8100031735 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		DDE503BC21BFE02000031735 /* WorkoutListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListCell.swift; sourceTree = "<group>"; };
 		DDE503BE21BFE06900031735 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		DDE503C021BFEB6400031735 /* WeekDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				DDE503B021BFB79D00031735 /* AlertHelper.swift */,
 				DDE503BE21BFE06900031735 /* UITableViewCellExtension.swift */,
+				DDE503C021BFEB6400031735 /* WeekDays.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				DDE503B121BFB79D00031735 /* AlertHelper.swift in Sources */,
 				DDE503AE21BFB59200031735 /* FitnessKitApi.swift in Sources */,
 				DDE503BF21BFE06900031735 /* UITableViewCellExtension.swift in Sources */,
+				DDE503C121BFEB6400031735 /* WeekDays.swift in Sources */,
 				DDE503B521BFD51400031735 /* CachableEntity.swift in Sources */,
 				DDE503AC21BFB3D800031735 /* WorkoutEntity.swift in Sources */,
 			);
