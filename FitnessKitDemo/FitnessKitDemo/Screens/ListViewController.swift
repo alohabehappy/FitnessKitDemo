@@ -12,6 +12,8 @@ import MBProgressHUD
 class ListViewController: UIViewController {
 	
 	let provider: ListProviderProtocol = ListProvider()
+	let adapter = ListTableAdapter()
+	lazy var customView = self.view as! ListView
 	
 	// MARK: View lifecycle
 	
@@ -23,6 +25,7 @@ class ListViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupNavBar()
+		adapter.connect(tableView: customView.tableView, items: [])
 		loadSchedule()
 	}
 	
@@ -32,7 +35,8 @@ class ListViewController: UIViewController {
 		provider.getCachedSchedule { [weak self] (result) in
 			switch result {
 			case .success(let items):
-				print(items)
+				let models = items.map { WorkoutViewModel(entity: $0) }
+				self?.adapter.reload(with: models)
 			case .failure(let error):
 				self?.showErrorMessage(error?.localizedDescription)
 			}

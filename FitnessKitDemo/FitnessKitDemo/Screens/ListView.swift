@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 extension ListView {
 	struct Appearance {
@@ -14,6 +15,16 @@ extension ListView {
 }
 
 class ListView: UIView {
+	
+	// MARK: - UI properties
+	
+	lazy var tableView: UITableView = {
+		let view = UITableView()
+		view.backgroundColor = .clear
+		return view
+	}()
+	
+	// MARK: - Init
 	
 	override init(frame: CGRect = CGRect.zero) {
 		super.init(frame: frame)
@@ -25,5 +36,10 @@ class ListView: UIView {
 	}
 	
 	func configureViews() {
+		addSubview(tableView)
+		
+		tableView.snp.makeConstraints { (make) in
+			make.edges.equalToSuperview()
+		}
 	}
 }

@@ -20,6 +20,10 @@
 		DDE503B321BFD49800031735 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503B221BFD49800031735 /* Cache.swift */; };
 		DDE503B521BFD51400031735 /* CachableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503B421BFD51400031735 /* CachableEntity.swift */; };
 		DDE503B721BFD84D00031735 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503B621BFD84D00031735 /* CustomError.swift */; };
+		DDE503B921BFDF1100031735 /* ListTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503B821BFDF1100031735 /* ListTableAdapter.swift */; };
+		DDE503BB21BFDF8100031735 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503BA21BFDF8100031735 /* WorkoutViewModel.swift */; };
+		DDE503BD21BFE02000031735 /* WorkoutListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503BC21BFE02000031735 /* WorkoutListCell.swift */; };
+		DDE503BF21BFE06900031735 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503BE21BFE06900031735 /* UITableViewCellExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		DDE503B221BFD49800031735 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		DDE503B421BFD51400031735 /* CachableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachableEntity.swift; sourceTree = "<group>"; };
 		DDE503B621BFD84D00031735 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		DDE503B821BFDF1100031735 /* ListTableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableAdapter.swift; sourceTree = "<group>"; };
+		DDE503BA21BFDF8100031735 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
+		DDE503BC21BFE02000031735 /* WorkoutListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListCell.swift; sourceTree = "<group>"; };
+		DDE503BE21BFE06900031735 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				DDE503A421BFAD9B00031735 /* ListViewController.swift */,
-				DDE503A521BFAD9B00031735 /* ListView.swift */,
+				DDE503B821BFDF1100031735 /* ListTableAdapter.swift */,
 				DDE503A621BFAD9B00031735 /* ListProvider.swift */,
+				DDE503A521BFAD9B00031735 /* ListView.swift */,
+				DDE503BC21BFE02000031735 /* WorkoutListCell.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -109,6 +119,7 @@
 			children = (
 				DDE503B421BFD51400031735 /* CachableEntity.swift */,
 				DDE503AB21BFB3D800031735 /* WorkoutEntity.swift */,
+				DDE503BA21BFDF8100031735 /* WorkoutViewModel.swift */,
 				DDE503B621BFD84D00031735 /* CustomError.swift */,
 				DDE503AD21BFB59200031735 /* FitnessKitApi.swift */,
 				DDE503B221BFD49800031735 /* Cache.swift */,
@@ -120,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				DDE503B021BFB79D00031735 /* AlertHelper.swift */,
+				DDE503BE21BFE06900031735 /* UITableViewCellExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -264,14 +276,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDE503BD21BFE02000031735 /* WorkoutListCell.swift in Sources */,
 				DDE503A921BFAD9B00031735 /* ListProvider.swift in Sources */,
 				DDE503A721BFAD9B00031735 /* ListViewController.swift in Sources */,
 				DDC44F7221BFA9480098C3CF /* AppDelegate.swift in Sources */,
 				DDE503B321BFD49800031735 /* Cache.swift in Sources */,
+				DDE503BB21BFDF8100031735 /* WorkoutViewModel.swift in Sources */,
 				DDE503A821BFAD9B00031735 /* ListView.swift in Sources */,
 				DDE503B721BFD84D00031735 /* CustomError.swift in Sources */,
+				DDE503B921BFDF1100031735 /* ListTableAdapter.swift in Sources */,
 				DDE503B121BFB79D00031735 /* AlertHelper.swift in Sources */,
 				DDE503AE21BFB59200031735 /* FitnessKitApi.swift in Sources */,
+				DDE503BF21BFE06900031735 /* UITableViewCellExtension.swift in Sources */,
 				DDE503B521BFD51400031735 /* CachableEntity.swift in Sources */,
 				DDE503AC21BFB3D800031735 /* WorkoutEntity.swift in Sources */,
 			);
