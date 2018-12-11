@@ -14,6 +14,9 @@
 		DDE503A721BFAD9B00031735 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503A421BFAD9B00031735 /* ListViewController.swift */; };
 		DDE503A821BFAD9B00031735 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503A521BFAD9B00031735 /* ListView.swift */; };
 		DDE503A921BFAD9B00031735 /* ListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503A621BFAD9B00031735 /* ListProvider.swift */; };
+		DDE503AC21BFB3D800031735 /* WorkoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503AB21BFB3D800031735 /* WorkoutEntity.swift */; };
+		DDE503AE21BFB59200031735 /* FitnessKitApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503AD21BFB59200031735 /* FitnessKitApi.swift */; };
+		DDE503B121BFB79D00031735 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503B021BFB79D00031735 /* AlertHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		DDE503A421BFAD9B00031735 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		DDE503A521BFAD9B00031735 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		DDE503A621BFAD9B00031735 /* ListProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProvider.swift; sourceTree = "<group>"; };
+		DDE503AB21BFB3D800031735 /* WorkoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEntity.swift; sourceTree = "<group>"; };
+		DDE503AD21BFB59200031735 /* FitnessKitApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessKitApi.swift; sourceTree = "<group>"; };
+		DDE503B021BFB79D00031735 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 				DDC44F7821BFA9490098C3CF /* Assets.xcassets */,
 				DDC44F7A21BFA9490098C3CF /* LaunchScreen.storyboard */,
 				DDC44F7D21BFA9490098C3CF /* Info.plist */,
+				DDE503AA21BFB3AD00031735 /* Core */,
+				DDE503AF21BFB79400031735 /* Helpers */,
 				DDE503A321BFAD9B00031735 /* Screens */,
 			);
 			path = FitnessKitDemo;
@@ -88,6 +96,23 @@
 				DDE503A621BFAD9B00031735 /* ListProvider.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		DDE503AA21BFB3AD00031735 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DDE503AB21BFB3D800031735 /* WorkoutEntity.swift */,
+				DDE503AD21BFB59200031735 /* FitnessKitApi.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DDE503AF21BFB79400031735 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DDE503B021BFB79D00031735 /* AlertHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F30835A4E93FE0B8791EF6B2 /* Pods */ = {
@@ -234,6 +259,9 @@
 				DDE503A721BFAD9B00031735 /* ListViewController.swift in Sources */,
 				DDC44F7221BFA9480098C3CF /* AppDelegate.swift in Sources */,
 				DDE503A821BFAD9B00031735 /* ListView.swift in Sources */,
+				DDE503B121BFB79D00031735 /* AlertHelper.swift in Sources */,
+				DDE503AE21BFB59200031735 /* FitnessKitApi.swift in Sources */,
+				DDE503AC21BFB3D800031735 /* WorkoutEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

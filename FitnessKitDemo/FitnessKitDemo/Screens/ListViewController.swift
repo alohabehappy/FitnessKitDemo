@@ -21,5 +21,28 @@ class ListViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		loadSchedule()
+	}
+	
+	// MARK: - Private
+	
+	private func loadSchedule() {
+		provider.getSchedule { [weak self] (result) in
+			switch result {
+			case .success(let items):
+				print(items)
+			case .failure(let error):
+				self?.showErrorMessage(error?.localizedDescription)
+			}
+		}
+	}
+	
+	private func showErrorMessage(_ message: String?) {
+		let alert = AlertHelper.alert(title: "Error",
+									  message: message,
+									  controller: self,
+									  buttons: nil,
+									  completion: nil)
+		present(alert, animated: true, completion: nil)
 	}
 }
