@@ -25,6 +25,5 @@ class ListView: UIView {
 	}
 	
 	func configureViews() {
-		backgroundColor = .yellow
 	}
 }

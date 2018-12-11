@@ -15,10 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-		window = UIWindow(frame: UIScreen.main.bounds)
-		window?.makeKeyAndVisible()
-		window?.rootViewController = ListViewController()
+		logDocumentDirectory()
+		loadRootViewController()
 		
 		return true
+	}
+	
+	private func logDocumentDirectory() {
+		guard let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+		print(documentsUrl)
+	}
+	
+	private func loadRootViewController() {
+		window = UIWindow(frame: UIScreen.main.bounds)
+		window?.backgroundColor = .white
+		window?.makeKeyAndVisible()
+		let navController = UINavigationController(rootViewController: ListViewController())
+		window?.rootViewController = navController
 	}
 }

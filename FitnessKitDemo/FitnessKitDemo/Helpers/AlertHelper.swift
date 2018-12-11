@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class AlertHelper {
+class AlertHelper {
 	
-	public static func alert(title: String?,
+	static func alert(title: String?,
 							 message: String?,
 							 controller: UIViewController,
-							 buttons: [String]?,
-							 completion: ((UIAlertAction, UIViewController, Int) -> Void)?) -> UIAlertController {
+							 buttons: [String]? = nil,
+							 completion: ((UIAlertAction, UIViewController, Int) -> Void)? = nil) -> UIAlertController {
 		
 		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 		

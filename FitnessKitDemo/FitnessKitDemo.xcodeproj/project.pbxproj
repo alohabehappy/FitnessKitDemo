@@ -17,6 +17,9 @@
 		DDE503AC21BFB3D800031735 /* WorkoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503AB21BFB3D800031735 /* WorkoutEntity.swift */; };
 		DDE503AE21BFB59200031735 /* FitnessKitApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503AD21BFB59200031735 /* FitnessKitApi.swift */; };
 		DDE503B121BFB79D00031735 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503B021BFB79D00031735 /* AlertHelper.swift */; };
+		DDE503B321BFD49800031735 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503B221BFD49800031735 /* Cache.swift */; };
+		DDE503B521BFD51400031735 /* CachableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503B421BFD51400031735 /* CachableEntity.swift */; };
+		DDE503B721BFD84D00031735 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE503B621BFD84D00031735 /* CustomError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		DDE503AB21BFB3D800031735 /* WorkoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEntity.swift; sourceTree = "<group>"; };
 		DDE503AD21BFB59200031735 /* FitnessKitApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessKitApi.swift; sourceTree = "<group>"; };
 		DDE503B021BFB79D00031735 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		DDE503B221BFD49800031735 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		DDE503B421BFD51400031735 /* CachableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachableEntity.swift; sourceTree = "<group>"; };
+		DDE503B621BFD84D00031735 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +107,11 @@
 		DDE503AA21BFB3AD00031735 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DDE503B421BFD51400031735 /* CachableEntity.swift */,
 				DDE503AB21BFB3D800031735 /* WorkoutEntity.swift */,
+				DDE503B621BFD84D00031735 /* CustomError.swift */,
 				DDE503AD21BFB59200031735 /* FitnessKitApi.swift */,
+				DDE503B221BFD49800031735 /* Cache.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -258,9 +267,12 @@
 				DDE503A921BFAD9B00031735 /* ListProvider.swift in Sources */,
 				DDE503A721BFAD9B00031735 /* ListViewController.swift in Sources */,
 				DDC44F7221BFA9480098C3CF /* AppDelegate.swift in Sources */,
+				DDE503B321BFD49800031735 /* Cache.swift in Sources */,
 				DDE503A821BFAD9B00031735 /* ListView.swift in Sources */,
+				DDE503B721BFD84D00031735 /* CustomError.swift in Sources */,
 				DDE503B121BFB79D00031735 /* AlertHelper.swift in Sources */,
 				DDE503AE21BFB59200031735 /* FitnessKitApi.swift in Sources */,
+				DDE503B521BFD51400031735 /* CachableEntity.swift in Sources */,
 				DDE503AC21BFB3D800031735 /* WorkoutEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

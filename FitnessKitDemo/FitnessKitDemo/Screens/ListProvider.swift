@@ -10,7 +10,8 @@ import Foundation
 import Moya
 
 protocol ListProviderProtocol {
-	func getSchedule(completion: @escaping (ListProviderResult) -> Void)
+	func getCachedSchedule(completion: @escaping (ListProviderResult) -> Void)
+	func getOnlineSchedule(completion: @escaping (ListProviderResult) -> Void)
 }
 
 enum ListProviderResult {
@@ -18,18 +19,32 @@ enum ListProviderResult {
 	case failure(error: Error?)
 }
 
-struct ListProvider: ListProviderProtocol {
+class ListProvider: ListProviderProtocol {
 	let moya = MoyaProvider<FitnessKitApi>()
+	let cache = Cache()
 	
-	func getSchedule(completion: @escaping (ListProviderResult) -> Void) {
-		
-		moya.request(.schedule) { (result) in
+	func getCachedSchedule(completion: @escaping (ListProviderResult) -> Void) {
+		let items = cache.get(WorkoutEntity.self)
+		completion(.success(items: items))
+	}
+	
+	func getOnlineSchedule(completion: @escaping (ListProviderResult) -> Void) {
+		moya.request(.schedule) { [weak self] (result) in
 			switch result {
 			case .success(let response):
-				let decoder = JSONDecoder()
-				if let items = try? decoder.decode([WorkoutEntity].self, from: response.data) {
-					completion(.success(items: items))
+				guard let items = try? JSONDecoder().decode([WorkoutEntity].self, from: response.data) else {
+					completion(.failure(error: CustomError.unknown))
+					return
 				}
+				do {
+					try self?.cache.delete(WorkoutEntity.self)
+					try self?.cache.save(items: items)
+				}
+				catch {
+					completion(.failure(error: error))
+					return
+				}
+				completion(.success(items: items))
 			case .failure(let error):
 				completion(.failure(error: error))
 			}

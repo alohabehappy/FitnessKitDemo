@@ -8,22 +8,28 @@
 
 import Foundation
 
-class WorkoutEntity: Decodable {
-	var appointmentId: String
-	var title: String
-	var description: String
-	var place: String
-	var teacher: String
-	var startTime: String
-	var endTime: String
-	var weekDay: Int
+class WorkoutEntity: CachableEntity {
+	@objc dynamic var appointmentId: String = ""
+	@objc dynamic var title: String = ""
+	@objc dynamic var text: String = ""
+	@objc dynamic var place: String = ""
+	@objc dynamic var teacher: String = ""
+	@objc dynamic var startTime: String = ""
+	@objc dynamic var endTime: String = ""
+	@objc dynamic var weekDay: Int = 0
+	
+	// MARK: - Override
+	
+	override static func primaryKey() -> String? {
+		return "appointmentId"
+	}
 	
 	// MARK: - Decodable
 	
 	enum CodingKeys: String, CodingKey {
 		case appointmentId = "appointment_id"
 		case title = "name"
-		case description
+		case text = "description"
 		case place
 		case teacher
 		case startTime
@@ -31,11 +37,11 @@ class WorkoutEntity: Decodable {
 		case weekDay
 	}
 	
-	required init(from decoder: Decoder) throws {
+	override func decode(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		appointmentId = try values.decode(String.self, forKey: .appointmentId)
 		title = try values.decode(String.self, forKey: .title)
-		description = try values.decode(String.self, forKey: .description)
+		text = try values.decode(String.self, forKey: .text)
 		place = try values.decode(String.self, forKey: .place)
 		teacher = try values.decode(String.self, forKey: .teacher)
 		startTime = try values.decode(String.self, forKey: .startTime)
